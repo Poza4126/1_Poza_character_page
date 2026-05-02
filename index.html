@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청운현령 정율휘</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        :root {
+            --bg-color: #f4f1ea; /* 한지 느낌의 배경색 */
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: var(--bg-color);
+        }
+
+        /* --- 이미지 설정 구역 --- */
+        
+        /* 1번 슬라이드: 표지 (한자 이미지) */
+        .slide-1 { 
+            background-image: url('cover.jpg'); /* 여기에 표지 이미지 파일명 입력 */
+        }
+
+        /* 2번 슬라이드: 프로필 이미지 */
+        .slide-2 { 
+            background-image: url('profile.jpg'); /* 여기에 캐릭터 이미지 파일명 입력 */
+        }
+
+        /* 3번 슬라이드: 추가 이미지 1 */
+        .slide-3 { 
+            background-image: url('extra1.jpg'); /* 여기에 세 번째 이미지 파일명 입력 */
+        }
+
+        /* 4번 슬라이드: 추가 이미지 2 */
+        .slide-4 { 
+            background-image: url('extra2.jpg'); /* 여기에 네 번째 이미지 파일명 입력 */
+        }
+
+        /* ----------------------- */
+
+        /* 하단 페이지 표시 점 색상 */
+        .swiper-pagination-bullet-active {
+            background: #8b0000 !important; /* 진한 붉은색 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide-1"></div>
+            <div class="swiper-slide slide-2"></div>
+            <div class="swiper-slide slide-3"></div>
+            <div class="swiper-slide slide-4"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            direction: "horizontal", // 가로 스와이프
+            loop: false,            // 마지막에서 처음으로 돌아가지 않음
+            grabCursor: true,       // 커서 모양 변경
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            keyboard: {
+                enabled: true,      // 키보드 화살표로 조작 가능
+            },
+        });
+    </script>
+</body>
+</html>
